@@ -1,0 +1,111 @@
+.container {
+    width: 30%;
+    margin: 4rem auto;
+    background-color: #fafafa;
+    padding: 4rem 3rem;
+    border: 2px solid #bbb;
+    border-radius: 10px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.header {
+    font-size: 2rem;
+    color: #004aaa;
+}
+
+.formField label {
+    color: #606060;
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.formField input {
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    padding: 0.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.formField input:focus {
+    outline: none;
+    line-height: 30px;
+    border-color: #1a73e8;
+}
+
+.formField input.completed {
+    border-color: #1a73e8;
+}
+
+.formField input.uncompleted {
+    border-color: #dd0000;
+    background-color: #fbbfbf;
+}
+
+.formField small {
+    background-color: #fbbfbf;
+    color: #9e0909;
+    padding: 0.2rem;
+    border-radius: 4px;
+}
+
+.checkboxContainer label {
+    color: #1a73e8;
+}
+
+.checkboxContainer input[type="checkbox"] {
+    margin-left: 1.2rem;
+    border: 1px solid #1a73e8;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 5px;
+    appearance: none;
+    transition: all 0.2s ease-in;
+}
+
+.checkboxContainer input[type="checkbox"]:checked {
+    background-color: #1a73e8;
+    border-radius: 50%;
+}
+
+.checkboxContainer input[type="checkbox"]:checked:focus {
+    border-color: #004aaa;
+}
+
+.formButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formButtons a {
+    text-decoration: none;
+    color: #004aaa;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.formButtons button {
+    background-color: #1a73e8;
+    color: #fafafa;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.formButtons button:hover {
+    background-color: #004aaa;
+}
