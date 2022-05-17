@@ -1,14 +1,32 @@
-const validateForm = data => {
+const validateForm = (data, type) => {
     const errors = {};
 
-    if(!data.name.trim()) {
-        errors.name = 'Name is required!';
-    } else if(data.name.trim().length < 6) {
-        errors.name = 'Name must be larger than 6 characters!';
-    } else {
-        delete errors.name;
+    if(type === 'signup') {
+        if(!data.name.trim()) {
+            errors.name = 'Name is required!';
+        } else if(data.name.trim().length < 6) {
+            errors.name = 'Name must be larger than 6 characters!';
+        } else {
+            delete errors.name;
+        }
+    
+        if(!data.confirmPassword) {
+            errors.confirmPassword = 'ConfirmPassword is required!';
+        } else if (data.password !== data.confirmPassword) {
+            errors.confirmPassword = 'ConfirmPassword must be the same with password!';
+        } else {
+            delete errors.confirmPassword
+        }
+    
+        if(!data.isAccepted) {
+            errors.isAccepted = 'IsAccepted is required!';
+        } else {
+            delete errors.isAccepted;
+        }
+
     }
 
+    
     if(!data.email.trim()) {
         errors.email = 'Email is required!';
     }
@@ -24,20 +42,6 @@ const validateForm = data => {
         errors.password = 'Password must be larger than 6 characters!';
     } else {
         delete errors.password;
-    }
-
-    if(!data.confirmPassword) {
-        errors.confirmPassword = 'ConfirmPassword is required!';
-    } else if (data.password !== data.confirmPassword) {
-        errors.confirmPassword = 'ConfirmPassword must be the same with password!';
-    } else {
-        delete errors.confirmPassword
-    }
-
-    if(!data.isAccepted) {
-        errors.isAccepted = 'IsAccepted is required!';
-    } else {
-        delete errors.isAccepted;
     }
 
     return errors;

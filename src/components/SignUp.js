@@ -59,7 +59,7 @@ const SignUp = () => {
     } 
 
     useEffect(() => {
-        setErrors(validateForm(data))
+        setErrors(validateForm(data, 'signup'))
     }, [data, touched])
 
     return (
@@ -72,7 +72,7 @@ const SignUp = () => {
                         type="text" 
                         id="name" 
                         name="name"
-                        className={(touched.name && errors.name) && styles.uncompleted} 
+                        className={(touched.name && errors.name) ? styles.uncompleted : styles.formInput} 
                         onChange={changeHandler} 
                         onFocus={focuseHandler} 
                         value={data.name} />
@@ -84,7 +84,7 @@ const SignUp = () => {
                         type="email" 
                         id="email" 
                         name="email" 
-                        className={(touched.email && errors.email) && styles.uncompleted} 
+                        className={(touched.email && errors.email) ? styles.uncompleted : styles.formInput} 
                         onChange={changeHandler} 
                         onFocus={focuseHandler} 
                         value={data.email} />
@@ -96,7 +96,7 @@ const SignUp = () => {
                         type="password" 
                         id="password" 
                         name="password" 
-                        className={(touched.password && errors.password) && styles.uncompleted} 
+                        className={(touched.password && errors.password) ? styles.uncompleted : styles.formInput} 
                         onChange={changeHandler} 
                         onFocus={focuseHandler} 
                         value={data.password} />
@@ -108,7 +108,7 @@ const SignUp = () => {
                         type="password" 
                         id="confirmPassword" 
                         name="confirmPassword" 
-                        className={(touched.confirmPassword && errors.confirmPassword) && styles.uncompleted} 
+                        className={(touched.confirmPassword && errors.confirmPassword) ? styles.uncompleted : styles.formInput} 
                         onChange={changeHandler} 
                         onFocus={focuseHandler} 
                         value={data.confirmPassword} />
