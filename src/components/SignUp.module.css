@@ -10,12 +10,16 @@
 .formContainer {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1rem;
 }
 
 .header {
     font-size: 2rem;
     color: #004aaa;
+}
+
+.formField {
+    height: 4.5rem;
 }
 
 .formField label {
@@ -57,8 +61,12 @@
     border-radius: 4px;
 }
 
-.checkboxContainer label {
+.formField .checkboxContainer label {
     color: #1a73e8;
+}
+
+.checkboxContainer {
+    display: flex;
 }
 
 .checkboxContainer input[type="checkbox"] {
@@ -77,7 +85,7 @@
     border-radius: 50%;
 }
 
-.checkboxContainer input[type="checkbox"]:checked:focus {
+.checkboxContainer input[type="checkbox"]:focus {
     border-color: #004aaa;
 }
 
@@ -108,4 +116,47 @@
 
 .formButtons button:hover {
     background-color: #004aaa;
+}
+
+@media only screen and (max-width: 1285px) {
+    .container {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    .container {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .container {
+        width: 85%;
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        width: 95%;
+    }
 }
