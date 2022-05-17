@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import styles from './SignUp.module.css';
-import validateForm from './lib/validateForm';
+import validateForm from '../lib/validateForm';
 
 const SignUp = () => {
     const [data, setData] = useState({
@@ -60,7 +60,7 @@ const SignUp = () => {
 
     useEffect(() => {
         setErrors(validateForm(data))
-    }, [setErrors, data])
+    }, [data, touched])
 
     return (
         <div className={styles.container}>
@@ -68,22 +68,50 @@ const SignUp = () => {
                 <h1 className={styles.header}>SignUp</h1>
                 <div className={styles.formField}>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" onChange={changeHandler} onFocus={focuseHandler} value={data.name} />
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name"
+                        className={(touched.name && errors.name) && styles.uncompleted} 
+                        onChange={changeHandler} 
+                        onFocus={focuseHandler} 
+                        value={data.name} />
                     {touched.name && errors.name && <small>{errors.name}</small>}
                 </div>
                 <div className={styles.formField}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" onChange={changeHandler} onFocus={focuseHandler} value={data.email} />
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        className={(touched.email && errors.email) && styles.uncompleted} 
+                        onChange={changeHandler} 
+                        onFocus={focuseHandler} 
+                        value={data.email} />
                     {touched.email && errors.email && <small>{errors.email}</small>}
                 </div>
                 <div className={styles.formField}>
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" onChange={changeHandler} onFocus={focuseHandler} value={data.password} />
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        className={(touched.password && errors.password) && styles.uncompleted} 
+                        onChange={changeHandler} 
+                        onFocus={focuseHandler} 
+                        value={data.password} />
                     {touched.password && errors.password && <small>{errors.password}</small>}
                 </div>
                 <div className={styles.formField}>
                     <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" onChange={changeHandler} onFocus={focuseHandler} value={data.confirmPassword} />
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        className={(touched.confirmPassword && errors.confirmPassword) && styles.uncompleted} 
+                        onChange={changeHandler} 
+                        onFocus={focuseHandler} 
+                        value={data.confirmPassword} />
                     {touched.confirmPassword && errors.confirmPassword && <small>{errors.confirmPassword}</small>}
                 </div>
                 <div className={styles.formField}>
