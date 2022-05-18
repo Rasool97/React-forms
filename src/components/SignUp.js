@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
-import styles from './SignUp.module.css';
 import validateForm from '../lib/validateForm';
 import { Link } from 'react-router-dom';
+import Toast from './Toast';
+
+import styles from './SignUp.module.css';
 
 const SignUp = () => {
     const [data, setData] = useState({
@@ -20,6 +22,11 @@ const SignUp = () => {
         password: false,
         confirmPassword: false,
         isAccepted: false,
+    })
+
+    const [toast, setToast] = useState({
+        type: '',
+        message: '',
     })
 
     const changeHandler = event => {
@@ -47,8 +54,16 @@ const SignUp = () => {
                 confirmPassword: true,
                 isAccepted: true,
             })
+
+            setToast({
+                type: 'error',
+                message: 'Invalid data!',
+            })
         } else {
-            console.log('ok');
+            setToast({
+                type: 'success',
+                message: 'You signed up successfully',
+            })
         }
     }
 
@@ -127,6 +142,7 @@ const SignUp = () => {
                     <button type='submit'>Sign Up</button>
                 </div>
             </form>
+            <Toast type={toast.type} message={toast.message} />
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import validateForm from '../lib/validateForm';
+import Toast from './Toast';
+
 import styles from './SignUp.module.css';
 
 const Login = () => {
@@ -14,6 +16,11 @@ const Login = () => {
     const [touched, setTouched] = useState({
         email: false,
         password: false,
+    })
+
+    const [toast, setToast] = useState({
+        type: '',
+        message: '',
     })
 
     const changeHandler = event => {
@@ -32,8 +39,16 @@ const Login = () => {
                 email: true,
                 password: true,
             })
+
+            setToast({
+                type: 'error',
+                message: 'Invalid data!',
+            })
         } else {
-            console.log('ok');
+            setToast({
+                type: 'success',
+                message: 'You login successfully',
+            })
         }
     }
 
@@ -81,6 +96,7 @@ const Login = () => {
                     <button type='submit'>Login</button>
                 </div>
             </form>
+            <Toast type={toast.type} message={toast.message} />
         </div>
     );
 };
