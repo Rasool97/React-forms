@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
-import styles from './SignUp.module.css';
+import { Link } from 'react-router-dom';
 import validateForm from '../lib/validateForm';
+import styles from './SignUp.module.css';
 
 const Login = () => {
     const [data, setData] = useState({
@@ -76,7 +77,7 @@ const Login = () => {
                     {touched.password && errors.password && <small>{errors.password}</small>}
                 </div>
                 <div className={styles.formButtons}>
-                    <a>Sign Up</a>
+                    <Link to='/signup'>Sign Up</Link>
                     <button type='submit'>Login</button>
                 </div>
             </form>

@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import styles from './SignUp.module.css';
 import validateForm from '../lib/validateForm';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const [data, setData] = useState({
@@ -122,7 +123,7 @@ const SignUp = () => {
                     {touched.isAccepted && errors.isAccepted && <small>{errors.isAccepted}</small>}
                 </div>
                 <div className={styles.formButtons}>
-                    <a>Login</a>
+                    <Link to='/login'>Login</Link>
                     <button type='submit'>Sign Up</button>
                 </div>
             </form>

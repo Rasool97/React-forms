@@ -1,5 +1,5 @@
 .container {
-    width: 30%;
+    width: 32%;
     margin: 4rem auto;
     background-color: #fafafa;
     padding: 3.5rem 3rem;
@@ -10,7 +10,7 @@
 .formContainer {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.5rem;
 }
 
 .header {
@@ -121,13 +121,13 @@
 
 @media only screen and (max-width: 1285px) {
     .container {
-        width: 35%;
+        width: 40%;
     }
 }
 
 @media only screen and (max-width: 1120px) {
     .container {
-        width: 40%;
+        width: 45%;
     }
 }
 
@@ -137,27 +137,27 @@
     }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 840px) {
     .container {
         width: 60%;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .container {
         width: 70%;
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 600px) {
     .container {
-        width: 85%;
+        width: 80%;
         padding: 3rem 1.5rem;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     .container {
-        width: 95%;
+        width: 99%;
     }
 }
